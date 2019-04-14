@@ -1,0 +1,15 @@
+<h1>Flights#new</h1>
+<p>Find me in app/views/flights/new.html.erb</p>
+
+
+<% @flights.each do |flight| %>
+<ul>
+    <li class="list-group">
+    <h3>
+        <%= flight.start_airport.name %> to <%= flight.end_airport.name %> 
+    </h3>
+    <p>Date: <%= flight.date %></p>
+    <p>Flight time in hours: <%= flight.flight_duration %></p>
+    </li>
+</ul>
+<% end %>
