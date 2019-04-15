@@ -5,23 +5,9 @@
 <%= form_tag flights_path, :method => :get do %>
 <%= select_tag( :start_airport, options_for_select(@flight_start_options) )%>
 <%= select_tag( :end_airport, options_for_select(@flight_end_options) )%>
+<%= select_tag( :date, options_for_select(@flight_date_options) )%>
 <%= submit_tag "Submit" %>
 <% end %>
-
-<% if false  %>
-<%= simple_form_for :flights, :method => :get, :url => flights_path do |f| %>
-            <p>
-               <%= f.select :start_airport, options_for_select(@flight_start_options), 
-               :selected => params[:start_airport] %>
-               <%= f.select :end_airport, options_for_select(@flight_end_options), 
-               :selected => params[:end_airport] %>
-               <%= f.select :date, options_for_select(@flight_date_options), 
-               :selected => params[:date], :onchange => "this.form.submit();" %>
-            <%= f.button :submit, "search" %>
-          </p>
-        <% end %>
-<% end %>
-
 
 <% @flights.each do |f| %>
 <ul class="list-group">

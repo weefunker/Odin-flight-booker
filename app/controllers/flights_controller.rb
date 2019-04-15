@@ -10,9 +10,9 @@ class FlightsController < ApplicationController
 
     if params[:start_airport] and params[:end_airport]
       @flights = 
-      Flight.start_search_results(params[:start_airport]).end_search_results(params[:end_airport])
+      Flight.start_search_results(params[:start_airport]).end_search_results(params[:end_airport]).date_search_results(params[:date])
     else 
-      flash.now[:danger] = "No flights found"
+      flash[:danger] = "No flights found"
       @flights = Flight.all 
     end
   end   
