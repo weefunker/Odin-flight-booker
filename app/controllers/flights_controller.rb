@@ -1,12 +1,13 @@
 class FlightsController < ApplicationController
-  def new
-  end
+ 
 
   def index
 
     @flight_start_options = Flight.all.map {|f| [f.start_airport.name, f.start_airport.id] }
     @flight_end_options = Flight.all.map {|f| [f.end_airport.name, f.end_airport.id] }
     @flight_date_options = Flight.all.map {|f| [f.date] }
+
+    @booking = Booking.new
 
     if params[:start_airport] and params[:end_airport]
       @flights = 

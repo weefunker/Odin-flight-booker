@@ -10,13 +10,7 @@
 <%= submit_tag "Submit" %>
 <% end %>
 
-<% @flights.each do |f| %>
-<ul class="list-group">
-<li class="list-group-item">
-<%= f.start_airport.name %>
-<%= f.end_airport.name %>
-<%= f.date %>
-<%= params[:tickets] %>
-</li>
-</ul>
+<%= form_for '', url: new_booking_path, method: :get do |f| %>
+    <%= render @flights %>
+    <%= f.submit %>
 <% end %>
