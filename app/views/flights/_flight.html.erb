@@ -1,9 +1,6 @@
-<ul class="list-group">
-<li class="list-group-item">
-<%= flight.start_airport.name %>
-<%= flight.end_airport.name %>
-<%= flight.date %>
-<%= params[:passenger_number] %>
  <%= radio_button_tag :flight_id, flight.id  %>
-</li>
-</ul>
+ <%= flight.start_airport.name %>
+ <%= flight.end_airport.name %>
+ <%= flight.date %>
+ <%= params[:number_of_passengers] %>
+ 

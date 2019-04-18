@@ -10,8 +10,9 @@
 <%= submit_tag "Submit" %>
 <% end %>
 
-<%= form_for '', url: new_flight_path, method: :get do |f| %>
-<%= render @flights %>
+<%= form_for '', url: new_booking_path, method: :get do |f| %>
+    <%= render @flights %>
+    <%= f.submit %>
 <% end %>
 
  
