@@ -1,8 +1,11 @@
-<%= form_for @booking do |booking| %>
-<%= booking.hidden_field :flight_id, value: @booking.flight_id %>
-<%= booking.fields_for :passengers, @booking.passengers.build do |passenger| %>
-<%= passenger.text_field :name %>
-<%= passenger.text_field :email %>
+<%= form_for @booking, url: bookings_path do |booking| %>
+  <%= booking.hidden_field :flight_id, value: @booking.flight_id %>
+  <% params[:passengers].to_i.times do %>
+<%= booking.fields_for :passengers, @booking.passengers.build do |p| %>
+<%= p.text_field :name %>
+<%= p.text_field :email %>
+<br>
+<% end %>
 <% end %>
 <%= booking.submit %>
 <% end %>

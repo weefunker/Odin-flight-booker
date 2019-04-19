@@ -1,12 +1,12 @@
 class BookingsController < ApplicationController
 
-    def new
-        number_of_passengers = params[:number_of_passengers].to_i
-        @booking = Booking.new(flight_id: params[:flight_id])
-        number_of_passengers.times { @booking.passengers.build}
-      end
+  def new
+    passenger_number = params[:passenger_number].to_i
+    @booking = Booking.new(flight_id: params[:flight_id])
     
-    
+  end
+
+
       def create
         @booking = Booking.create!(booking_params)
         redirect_to @booking
@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
       private
         def booking_params
            params.require(:booking).permit(:flight_id, :passengers_attributes =>
-             [:id, :name, :address, :city, :state, :zipcode])
+             [:id, :name, :email])
         end
         
 end

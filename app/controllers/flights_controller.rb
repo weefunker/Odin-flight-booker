@@ -8,6 +8,7 @@ class FlightsController < ApplicationController
     @flight_date_options = Flight.all.map {|f| [f.date] }
 
     @booking = Booking.new
+    @passenger_number = params[:passenger_number]
 
     if params[:start_airport] and params[:end_airport]
       @flights = 
