@@ -1,6 +1,4 @@
 class Flight < ApplicationRecord
- 
-
   belongs_to :start_airport, class_name: "Airport", foreign_key: "start_airport_id"
   belongs_to :end_airport, class_name: "Airport", foreign_key: "end_airport_id"
 
